@@ -9,9 +9,9 @@ export default function TndgranitePage() {
     <Header/>
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-300 to-indigo-400 text-white py-20">
+      <section className="relative bg-gradient-to-r from-blue-950 to-blue-700 text-white py-20">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Công Ty TNHH TM&TK Tường Nhà Đẹp
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto">

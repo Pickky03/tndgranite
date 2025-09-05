@@ -8,7 +8,7 @@ export default function ContactPage() {
     <Header/>
     <main className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-300 to-indigo-400 text-white py-16 text-center">
+      <section className="bg-gradient-to-r  from-blue-950 to-blue-700 text-white py-16 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Liên hệ với chúng tôi</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-blue-100">
           Nếu bạn có bất kỳ câu hỏi nào, hãy liên hệ ngay để được hỗ trợ nhanh chóng và chuyên nghiệp.
