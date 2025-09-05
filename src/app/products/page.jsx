@@ -11,7 +11,7 @@ import VicoStone from './components/vico';
 import TerrazzoStone from './components/terrazzoStone';
 import GraniteStone from './components/graniteStone';
 import MarbleStone from './components/marbleStone';
-
+import Lavabo from './components/lavabo';
 export default function Products() {
     const [mounted, setMounted] = useState(false);
     
@@ -54,6 +54,11 @@ export default function Products() {
             key: '7',
             label: 'Đá Tự Nhiên Marble',
             children: <MarbleStone />,
+        },
+        {
+            key: '8',
+            label: 'Lavabo',
+            children: <Lavabo />,
         },
     ];
 
