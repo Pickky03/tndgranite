@@ -22,9 +22,9 @@ export default function TerrazzoStone() {
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {products.map((product) => (
-                    <div key={product.id} className="border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+                    <div key={product.id} className="border-0 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group bg-gradient-to-br from-white to-gray-50">
                         <div 
-                            className="relative h-64 sm:h-48 overflow-hidden"
+                            className="relative h-64 sm:h-52 overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-[1.02]"
                             onClick={() => handleViewDetails(product)}
                         >
                             <Image 
@@ -36,15 +36,15 @@ export default function TerrazzoStone() {
                                 style={{objectFit: 'cover'}}
                                 className="group-hover:scale-105 transition-transform duration-500"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70 sm:opacity-0 sm:group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end">
                                 <div className="p-4 w-full">
                                     <p className="text-white text-sm block">
                                         {product.features[0]}
                                     </p>
                                 </div>
                             </div>
-                            <div className="absolute top-0 right-0 m-3">
-                                <span className="text-blue-600 font-medium text-xs bg-white/90 px-2 py-1 rounded shadow-sm">
+                            <div className="absolute top-0 right-0 m-3 transform transition-transform duration-300 group-hover:translate-y-1 group-hover:translate-x-1">
+                                <span className="text-blue-600 font-medium text-xs bg-white/90 px-3 py-1.5 rounded-full shadow-md backdrop-blur-sm">
                                     {product.code}
                                 </span>
                             </div>
@@ -59,16 +59,16 @@ export default function TerrazzoStone() {
                     <h2 className="text-3xl font-bold text-center px-6">Hình Ảnh Sản Phẩm Hoàn Thiện</h2>
                     <div className="h-0.5 bg-gray-200 flex-grow max-w-xs"></div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                 {demoImages.map((item, index) => (
-  <div key={`${item.id}-demo-${index}`} className="relative h-64 sm:h-80 shadow-lg rounded-lg overflow-hidden group cursor-pointer">
+  <div key={`${item.id}-demo-${index}`} className="relative h-64 sm:h-80 shadow-xl rounded-xl overflow-hidden group cursor-pointer transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl">
     <Image
       src={item.image}               
       alt={item.alt || `Demo ${index + 1}`}  
       fill
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       style={{ objectFit: 'cover' }}
-      className="group-hover:scale-105 transition-transform duration-700"
+      className="group-hover:scale-110 transition-transform duration-700 ease-in-out"
     />
   </div>
 ))}
@@ -76,12 +76,12 @@ export default function TerrazzoStone() {
             </div>
 
             {selectedProduct && (
-  <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-2 sm:p-4">
-    <div className="bg-white rounded-xl max-w-5xl w-full h-[90vh] md:h-auto p-0 relative overflow-hidden shadow-2xl">
+  <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4 animate-fadeIn">
+    <div className="bg-white rounded-2xl max-w-5xl w-full h-[90vh] md:h-auto p-0 relative overflow-hidden shadow-2xl border border-gray-100 animate-scaleIn">
       {/* Nút đóng */}
       <button 
         onClick={closeDetails}
-        className="absolute top-3 right-3 text-white bg-black/30 hover:bg-black/50 p-2 rounded-full z-10 transition-colors"
+        className="absolute top-3 right-3 text-white bg-black/40 hover:bg-black/60 p-2.5 rounded-full z-10 transition-all duration-300 hover:rotate-90 hover:scale-110"
         aria-label="Đóng"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,7 +91,7 @@ export default function TerrazzoStone() {
 
       <div className="flex flex-col md:flex-row h-full md:h-auto">
         {/* Hình ảnh */}
-        <div className="w-full md:w-1/2 bg-gray-50 relative aspect-video md:aspect-[4/5]">
+        <div className="w-full md:w-1/2 bg-gradient-to-br from-gray-50 to-gray-100 relative aspect-video md:aspect-[4/5] overflow-hidden">
           <div className="relative w-full h-full">
             <Image 
               src={selectedProduct.image} 
@@ -184,7 +184,7 @@ export default function TerrazzoStone() {
 
             {/* Nút liên hệ */}
             <div className="mt-6 md:mt-8 flex justify-center">
-              <button className="w-full sm:w-auto bg-blue-600 text-white px-4 py-2.5 md:px-6 md:py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-sm md:text-base">
+              <button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-3 md:px-7 md:py-3.5 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-3 text-sm md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>

@@ -233,7 +233,7 @@ export const demo = [
   },
   {
     id: 5,
-    image: "/images/marble/demo5.jpg",
+    image: "/images/marble/demo8.jpeg",
     alt: "Đá MARBLE mã MARBLE-105 - Ứng dụng đá marble trong thiết kế nội thất",
   },
   {
